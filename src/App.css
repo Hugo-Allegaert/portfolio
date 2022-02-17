@@ -41,8 +41,8 @@ select {
   }
 }
 
-body div {
-  transition: background-color 0.5s ease-out;
+#root {
+  transition: background-color 0.3s ease-out;
 }
 
 .toggle {

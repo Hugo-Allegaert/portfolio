@@ -10,5 +10,11 @@
   "MoreThan": "Plus de 5 ans",
   "FrontDev": "Développeur Frontend",
   "Designer": "Concepteur Web",
-  "Advanced": "Avancé"
+  "Advanced": "Avancé",
+  "Intermediate": "Intermédiaire",
+  "Basic": "Basique",
+  "Beginner": "Débutant",
+  "Cpp": "C++",
+  "Qualification": "Qualifications",
+  "MyPersonalJourney": "Mon parcours personnel."
 }

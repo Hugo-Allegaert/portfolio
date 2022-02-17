@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, makeStyles } from "@material-ui/core";
+import { Box, makeStyles, Typography } from "@material-ui/core";
 import { useCustomTheme } from "../context/theme-context";
 import { useTranslation } from "react-i18next";
 
@@ -14,6 +14,12 @@ const useStyle = makeStyles((theme) => ({
     color: theme.palette.primary.main,
     backgroundColor: theme.palette.background.paper,
   },
+  langbtn: {
+    padding: "0",
+    color: theme.palette.secondary.main,
+    fontWeight: "bold",
+    cursor: "pointer",
+  },
   customselect: {
     color: theme.palette.secondary.main,
     backgroundColor: theme.palette.background.paper,
@@ -27,6 +33,8 @@ const Header = () => {
   const { currentTheme, setTheme } = useCustomTheme();
   const { i18n } = useTranslation();
 
+  const langs = { fr: "FR", en: "EN" };
+
   const handleThemeChange = () => {
     if (currentTheme === "normal") {
       setTheme("dark");
@@ -36,23 +44,22 @@ const Header = () => {
   };
 
   const handleChangeLanguage = (e) => {
-    const languageValue = e.target.value;
-    i18n.changeLanguage(languageValue);
+    if (i18n.language === "en") {
+      i18n.changeLanguage("fr");
+    } else {
+      i18n.changeLanguage("en");
+    }
   };
 
-  // TODO check for better btn  click
   return (
     <Box className={classes.header}>
-      <Box>
-        <select
-          className={classes.customselect}
-          value={i18n.language}
-          onChange={handleChangeLanguage}
-        >
-          <option value="en">EN</option>
-          <option value="fr">FR</option>
-        </select>
-      </Box>
+      <Typography
+        variant="button"
+        className={classes.langbtn}
+        onClick={handleChangeLanguage}
+      >
+        {langs[i18n.language]}
+      </Typography>
       <Box>
         <input
           id="toggle"

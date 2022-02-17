@@ -10,5 +10,11 @@
   "MoreThan": "More than 5 years",
   "FrontDev": "Frontend developper",
   "Designer": "Webdesigner",
-  "Advanced": "Advanced"
+  "Advanced": "Advanced",
+  "Intermediate": "Intermediate",
+  "Basic": "Basic",
+  "Beginner": "Beginner",
+  "Cpp": "C++",
+  "Qualification": "Qualification",
+  "MyPersonalJourney": "My personal journey."
 }

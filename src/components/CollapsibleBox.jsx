@@ -1,38 +1,38 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Box, makeStyles, Typography } from "@material-ui/core";
 import { useTheme } from "@mui/material";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 
 const useStyle = makeStyles((theme) => ({
   boxcontainer: {
-    backgroundColor: theme.palette.background.paper,
-    padding: "0",
+    backgroundColor: theme.palette.background.light,
+    alignSelf: "baseline",
     borderRadius: "20px",
-    "&.shadow": {
-      boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 4px;",
-    },
+    boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 4px;",
+    padding: theme.spacing(2),
   },
   boxtitles: {
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
     color: theme.palette.secondary.main,
-
-    backgroundColor: theme.palette.background.light,
-    borderRadius: "20px 20px 0 0",
-    padding: theme.spacing(2),
-    "&.fullradius": {
-      borderRadius: "20px",
-      boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 4px;",
-    },
   },
   boxcontent: {
-    backgroundColor: theme.palette.background.light,
-    borderRadius: "0 0 20px 20px",
-    padding: theme.spacing(2),
+    maxHeight: "0",
+    transition: "max-height 500ms ease-out",
+    overflow: "hidden",
+  },
+  uncollapse: {
+    maxHeight: "1000px",
+  },
+  collapse: {
+    maxHeight: "0px",
   },
   marginLeft: {
     marginLeft: theme.spacing(2),
+  },
+  marginTop: {
+    marginTop: theme.spacing(2),
   },
   collapsebtn: {
     marginLeft: theme.spacing(2),
@@ -49,14 +49,24 @@ const CollapsibleBox = ({ title, subtitle, icon, children }) => {
   const classes = useStyle();
   const theme = useTheme();
   const [collapse, setCollapse] = useState(true);
+  const [state, setState] = useState(false);
 
   const handleCollapse = () => {
     setCollapse(!collapse);
   };
 
+  // Trigger growth of box
+  useEffect(() => {
+    if (collapse) {
+      setState(false);
+    } else {
+      setState(true);
+    }
+  }, [collapse]);
+
   return (
-    <Box className={`${classes.boxcontainer} ${!collapse ? "shadow" : ""}`}>
-      <Box className={`${classes.boxtitles} ${collapse ? "fullradius" : ""}`}>
+    <Box className={classes.boxcontainer}>
+      <Box className={classes.boxtitles}>
         {icon}
         <Box className={classes.marginLeft}>
           <Typography variant="body1" style={{ fontWeight: "bold" }}>
@@ -74,9 +84,17 @@ const CollapsibleBox = ({ title, subtitle, icon, children }) => {
           onClick={handleCollapse}
         />
       </Box>
-      {collapse === false && (
-        <Box className={classes.boxcontent}>{children}</Box>
-      )}
+      <Box
+        className={`${classes.boxcontent} ${
+          state ? classes.uncollapse : classes.collapse
+        }`}
+      >
+        {collapse === false ? (
+          <Box className={classes.marginTop}>{children}</Box>
+        ) : (
+          <></>
+        )}
+      </Box>
     </Box>
   );
 };

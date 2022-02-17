@@ -13,7 +13,7 @@ const useStyle = makeStyles((theme) => ({
     marginTop: theme.spacing(10),
     display: "grid",
     gridTemplateColumns: "repeat(2, 1fr)",
-    gridGap: theme.spacing(10),
+    gridGap: theme.spacing(8),
     [theme.breakpoints.down("sm")]: {
       gridTemplateColumns: "repeat(1, 1fr)",
       gridGap: theme.spacing(5),
@@ -44,22 +44,96 @@ const Skills = () => {
           percent={80}
           margin={true}
         />
+        <ProgressBar
+          title={t("Cpp")}
+          subtitle={t("Intermediate")}
+          percent={75}
+          margin={true}
+        />
       </CollapsibleBox>
       <CollapsibleBox
         title={t("FrontDev")}
         subtitle={t("MoreThan")}
         icon={<CodeIcon />}
-      ></CollapsibleBox>
+      >
+        <ProgressBar
+          title={"React"}
+          subtitle={t("Intermediate")}
+          percent={70}
+        />
+        <ProgressBar
+          title={"VueJs"}
+          subtitle={t("Intermediate")}
+          percent={70}
+          margin={true}
+        />
+        <ProgressBar
+          title={"JavaScript"}
+          subtitle={t("Intermediate")}
+          percent={70}
+          margin={true}
+        />
+        <ProgressBar
+          title={"HTML/CSS"}
+          subtitle={t("Basic")}
+          percent={60}
+          margin={true}
+        />
+      </CollapsibleBox>
       <CollapsibleBox
         title={t("Designer")}
         subtitle={t("MoreThan")}
         icon={<FormatColorTextIcon />}
-      ></CollapsibleBox>
+      >
+        <ProgressBar
+          title={"Figma"}
+          subtitle={t("Intermediate")}
+          percent={70}
+        />
+        <ProgressBar
+          title={"Photoshop"}
+          subtitle={t("Basic")}
+          percent={50}
+          margin={true}
+        />
+        <ProgressBar
+          title={"Blender"}
+          subtitle={t("Beginner")}
+          percent={35}
+          margin={true}
+        />
+      </CollapsibleBox>
       <CollapsibleBox
         title={t("DevOps")}
         subtitle={t("MoreThan")}
         icon={<SettingsIcon />}
-      ></CollapsibleBox>
+      >
+        <ProgressBar title={"Docker"} subtitle={t("Advanced")} percent={80} />
+        <ProgressBar
+          title={"Git"}
+          subtitle={t("Advanced")}
+          percent={80}
+          margin={true}
+        />
+        <ProgressBar
+          title={"PostgreSQL"}
+          subtitle={t("Advanced")}
+          percent={80}
+          margin={true}
+        />
+        <ProgressBar
+          title={"MySql"}
+          subtitle={t("Advanced")}
+          percent={75}
+          margin={true}
+        />
+        <ProgressBar
+          title={"Ansible"}
+          subtitle={t("Basic")}
+          percent={70}
+          margin={true}
+        />
+      </CollapsibleBox>
     </Box>
   );
 };

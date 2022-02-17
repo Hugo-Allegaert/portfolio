@@ -104,7 +104,7 @@ const Hello = () => {
           variant="contained"
           style={{ marginLeft: "4em" }}
           onClick={() => {
-            window.location = "#skills";
+            window.location = "#qualification";
           }}
         >
           {t("AboutMe")}

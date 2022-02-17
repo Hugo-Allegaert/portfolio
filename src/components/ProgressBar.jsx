@@ -70,7 +70,7 @@ function useInterval(callback, delay) {
 const ProgressBar = ({ title, subtitle, percent, margin }) => {
   const classes = useStyle();
   const [state, setState] = useState(false);
-  const [percentLoader, setPercentLoader] = useState(0);
+  const [percentLoader, setPercentLoader] = useState(percent > 50 ? 50 : 0);
 
   // Trigger growth of percent value
   useInterval(() => {

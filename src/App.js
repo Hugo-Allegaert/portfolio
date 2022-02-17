@@ -20,6 +20,7 @@ function App() {
       <Section title={t("Skills")} subtitle={t("MySkills")} id="skills">
         <Skills />
       </Section>
+      <Section title={t('Qualification')} subtitle={t('MyPersonalJourney')} id="qualification">test</Section>
     </CustomThemeProvider>
   );
 }
