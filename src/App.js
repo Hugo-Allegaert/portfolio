@@ -7,6 +7,7 @@ import Hello from './components/Hello';
 import Section from './components/Section';
 import { useTranslation } from "react-i18next";
 import Skills from './components/Skills';
+import Qualification from './components/Qualification';
 
 function App() {
   const { t } = useTranslation();
@@ -20,7 +21,9 @@ function App() {
       <Section title={t("Skills")} subtitle={t("MySkills")} id="skills">
         <Skills />
       </Section>
-      <Section title={t('Qualification')} subtitle={t('MyPersonalJourney')} id="qualification">test</Section>
+      <Section title={t('Qualification')} subtitle={t('MyPersonalJourney')} id="qualification">
+        <Qualification/>
+      </Section>
     </CustomThemeProvider>
   );
 }

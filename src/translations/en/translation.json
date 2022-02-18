@@ -16,5 +16,15 @@
   "Beginner": "Beginner",
   "Cpp": "C++",
   "Qualification": "Qualification",
-  "MyPersonalJourney": "My personal journey."
+  "MyPersonalJourney": "My personal journey.",
+  "Education": "Education",
+  "Work": "Work",
+  "BacEs": "Baccalaureate in economics and social science",
+  "HighSchool": "High school",
+  "EpitechGrandEcole": "Epitech Grande Ecole program",
+  "SailInstructor": "Sailing instructor",
+  "Summer": "Summer",
+  "WorkStage1": "Python / NodeJs developer internship",
+  "Months": "months",
+  "Alternate": "Alternate"
 }

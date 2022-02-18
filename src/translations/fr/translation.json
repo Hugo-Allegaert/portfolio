@@ -16,5 +16,16 @@
   "Beginner": "Débutant",
   "Cpp": "C++",
   "Qualification": "Qualifications",
-  "MyPersonalJourney": "Mon parcours personnel."
+  "MyPersonalJourney": "Mon parcours personnel.",
+  "HighSchoolDetail": "Detail programme lycée.test aha",
+  "Education": "Éducation",
+  "Work": "Travail",
+  "BacEs": "Baccalauréat économique et social",
+  "HighSchool": "Lycée",
+  "EpitechGrandEcole": "Epitech programme Grande École",
+  "SailInstructor": "Moniteur de voile",
+  "Summer": "Été",
+  "WorkStage1": "Stage développeur Python / NodeJs",
+  "Months": "mois",
+  "Alternate": "Alternance"
 }

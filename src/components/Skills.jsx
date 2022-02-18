@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, makeStyles, Typography } from "@material-ui/core";
+import { Box, makeStyles } from "@material-ui/core";
 import CollapsibleBox from "./CollapsibleBox";
 import { t } from "i18next";
 import StorageIcon from "@mui/icons-material/Storage";
@@ -130,7 +130,7 @@ const Skills = () => {
         <ProgressBar
           title={"Ansible"}
           subtitle={t("Basic")}
-          percent={70}
+          percent={65}
           margin={true}
         />
       </CollapsibleBox>

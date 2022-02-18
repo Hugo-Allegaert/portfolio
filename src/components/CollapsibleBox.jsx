@@ -19,7 +19,7 @@ const useStyle = makeStyles((theme) => ({
   },
   boxcontent: {
     maxHeight: "0",
-    transition: "max-height 500ms ease-out",
+    transition: "max-height 1s ease-out !important",
     overflow: "hidden",
   },
   uncollapse: {

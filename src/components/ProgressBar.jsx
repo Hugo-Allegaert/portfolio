@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import { Box, makeStyles, Typography } from "@material-ui/core";
+import { makeStyles, Typography } from "@material-ui/core";
 
 const useStyle = makeStyles((theme) => ({
   boxcontainer: {
@@ -23,7 +23,7 @@ const useStyle = makeStyles((theme) => ({
     boxShadow: "0 0 5px rgba(0, 0, 0, .2)",
     borderRadius: "3px",
     width: "0px",
-    transition: "width 1.7s",
+    transition: "width 1.7s !important",
   },
   flexbetween: {
     display: "flex",
@@ -77,7 +77,7 @@ const ProgressBar = ({ title, subtitle, percent, margin }) => {
     if (percentLoader < percent) {
       setPercentLoader(percentLoader + 1);
     }
-  }, 10);
+  }, 30);
 
   // Trigger growth of progressbar
   useEffect(() => {
