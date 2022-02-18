@@ -85,25 +85,25 @@ const ProgressBar = ({ title, subtitle, percent, margin }) => {
   }, []);
 
   return (
-    <Box className={margin ? classes.marginTop : ""}>
-      <Box className={classes.flexbetween}>
-        <Box className={classes.titlecontainer}>
-          <Box className={classes.title}>{title}</Box>
+    <div className={margin ? classes.marginTop : ""}>
+      <div className={classes.flexbetween}>
+        <div className={classes.titlecontainer}>
+          <div className={classes.title}>{title}</div>
           <Typography variant="caption" className={classes.subtitle}>
             {subtitle}
           </Typography>
-        </Box>
-        <Box className={classes.percent}>{percentLoader}%</Box>
-      </Box>
-      <Box>
-        <Box className={classes.progresscontainer}>
-          <Box
+        </div>
+        <div className={classes.percent}>{percentLoader}%</div>
+      </div>
+      <div>
+        <div className={classes.progresscontainer}>
+          <div
             className={classes.progressbar}
             style={{ width: state ? `${percent}%` : "0" }}
           />
-        </Box>
-      </Box>
-    </Box>
+        </div>
+      </div>
+    </div>
   );
 };
 

@@ -65,10 +65,10 @@ const CollapsibleBox = ({ title, subtitle, icon, children }) => {
   }, [collapse]);
 
   return (
-    <Box className={classes.boxcontainer}>
-      <Box className={classes.boxtitles}>
+    <div className={classes.boxcontainer}>
+      <div className={classes.boxtitles}>
         {icon}
-        <Box className={classes.marginLeft}>
+        <div className={classes.marginLeft}>
           <Typography variant="body1" style={{ fontWeight: "bold" }}>
             {title}
           </Typography>
@@ -78,24 +78,24 @@ const CollapsibleBox = ({ title, subtitle, icon, children }) => {
           >
             {subtitle}
           </Typography>
-        </Box>
+        </div>
         <ExpandMoreIcon
           className={`${classes.collapsebtn} ${!collapse ? "rotate" : ""}`}
           onClick={handleCollapse}
         />
-      </Box>
-      <Box
+      </div>
+      <div
         className={`${classes.boxcontent} ${
           state ? classes.uncollapse : classes.collapse
         }`}
       >
         {collapse === false ? (
-          <Box className={classes.marginTop}>{children}</Box>
+          <div className={classes.marginTop}>{children}</div>
         ) : (
           <></>
         )}
-      </Box>
-    </Box>
+      </div>
+    </div>
   );
 };
 
