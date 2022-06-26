@@ -13,6 +13,7 @@ const useStyle = makeStyles((theme) => ({
     position: "fixed",
     color: theme.palette.primary.main,
     backgroundColor: theme.palette.background.paper,
+    zIndex: "100",
   },
   langbtn: {
     padding: "0",

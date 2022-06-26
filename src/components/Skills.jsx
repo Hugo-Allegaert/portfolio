@@ -35,19 +35,19 @@ const Skills = () => {
         <ProgressBar
           title={"Python"}
           subtitle={t("Advanced")}
-          percent={90}
+          percent={95}
           margin={true}
         />
         <ProgressBar
           title={"NodeJS"}
           subtitle={t("Advanced")}
-          percent={80}
+          percent={70}
           margin={true}
         />
         <ProgressBar
           title={t("Cpp")}
           subtitle={t("Intermediate")}
-          percent={75}
+          percent={65}
           margin={true}
         />
       </CollapsibleBox>
@@ -108,7 +108,7 @@ const Skills = () => {
         subtitle={t("MoreThan")}
         icon={<SettingsIcon />}
       >
-        <ProgressBar title={"Docker"} subtitle={t("Advanced")} percent={80} />
+        <ProgressBar title={"Docker"} subtitle={t("Advanced")} percent={85} />
         <ProgressBar
           title={"Git"}
           subtitle={t("Advanced")}

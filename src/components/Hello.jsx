@@ -1,8 +1,7 @@
 import React from "react";
 import { Box, makeStyles, Typography, useTheme } from "@material-ui/core";
-import Button from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
 import { useTranslation } from "react-i18next";
+import { ContainedButton, OutlinedButton } from "./CustomButtons";
 
 const useStyle = makeStyles((theme) => ({
   dot: {
@@ -49,28 +48,6 @@ const useStyle = makeStyles((theme) => ({
   },
 }));
 
-const OutlinedButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.secondary.main,
-  borderColor: theme.palette.secondary.main,
-  backgroundColor: theme.palette.background.paper,
-  "&:hover": {
-    backgroundColor: theme.palette.secondary.light,
-    color: theme.palette.primary.main,
-    borderColor: theme.palette.secondary.main,
-  },
-}));
-
-const ContainedButton = styled(Button)(({ theme }) => ({
-  color: theme.palette.background.paper,
-  borderColor: theme.palette.secondary.main,
-  backgroundColor: theme.palette.secondary.main,
-  "&:hover": {
-    backgroundColor: theme.palette.secondary.light,
-    color: theme.palette.primary.main,
-    borderColor: theme.palette.secondary.main,
-  },
-}));
-
 const Hello = () => {
   const classes = useStyle();
   const theme = useTheme();
@@ -88,7 +65,8 @@ const Hello = () => {
           </Box>
           <Typography variant="body1">
             {t("Im")} <span className={classes.importante}>Hugo Allegaert</span>
-            , {t("FullStackDev")}.
+            , {t("FullStackDev")}
+            <br /> {t("Specialized")}.
           </Typography>
         </Box>
         <Box className={classes.centered}>
@@ -96,7 +74,12 @@ const Hello = () => {
         </Box>
       </Box>
       <Box className={classes.btncontainer}>
-        <OutlinedButton theme={theme} variant="outlined">
+        <OutlinedButton
+          theme={theme}
+          variant="outlined"
+          href="/img/Hugo-Allegaert-CV..pdf"
+          download="Hugo-Allegaert-CV.pdf"
+        >
           {t("DownloadCV")}
         </OutlinedButton>
         <ContainedButton
@@ -104,7 +87,7 @@ const Hello = () => {
           variant="contained"
           style={{ marginLeft: "4em" }}
           onClick={() => {
-            window.location = "#qualification";
+            window.location = "#skills";
           }}
         >
           {t("AboutMe")}

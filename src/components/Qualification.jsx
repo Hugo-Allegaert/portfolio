@@ -36,9 +36,15 @@ const useStyle = makeStyles((theme) => ({
     zIndex: "1",
   },
   timelineBox: {
-    margin: "-0.5em 40px 40px 40px",
+    margin: "-0.5em 40px 0px 40px",
+    [theme.breakpoints.down("sm")]: {
+      margin: "-0.5em 20px 0px 20px",
+    },
     borderRadius: "10px",
     cursor: "pointer",
+    "&:hover": {
+      transform: "translateY(-5px)",
+    },
   },
   subtitle: {
     color: theme.palette.grey[500],
@@ -68,11 +74,27 @@ const useStyle = makeStyles((theme) => ({
     display: "flex",
     justifyItems: "baseline",
   },
+  centeredText: {
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
+    alignItems: "center",
+  },
+  marginBottom: {
+    marginBottom: theme.spacing(2),
+  },
+  secondaryColor: {
+    color: theme.palette.secondary.main,
+  },
+  textBold: {
+    fontWeight: "bold",
+  },
 }));
 
 const TimeLineLeft = ({ title, subtitle, date, backdropContent, last }) => {
   const classes = useStyle();
   const [backdrop, setBackdrop] = useState(false);
+  const { t } = useTranslation();
 
   const handleDropBox = (open) => {
     setBackdrop(open);
@@ -97,6 +119,11 @@ const TimeLineLeft = ({ title, subtitle, date, backdropContent, last }) => {
           <DateRangeIcon fontSize="small" />
           <Typography variant="body2" style={{ marginLeft: "0.5em" }}>
             {date}
+          </Typography>
+        </div>
+        <div variant="body2" className={classes.timeContainer}>
+          <Typography variant="body2" style={{ marginTop: "0" }}>
+            {t("SeeMore")}
           </Typography>
           <ArrowForwardIcon
             fontSize="small"
@@ -117,6 +144,7 @@ const TimeLineLeft = ({ title, subtitle, date, backdropContent, last }) => {
 const TimeLineRight = ({ title, subtitle, date, backdropContent, last }) => {
   const classes = useStyle();
   const [backdrop, setBackdrop] = useState(false);
+  const { t } = useTranslation();
 
   const handleDropBox = (open) => {
     setBackdrop(open);
@@ -148,6 +176,11 @@ const TimeLineRight = ({ title, subtitle, date, backdropContent, last }) => {
           <Typography variant="body2" style={{ marginLeft: "0.5em" }}>
             {date}
           </Typography>
+        </div>
+        <div variant="body2" className={classes.timeContainer}>
+          <Typography variant="body2" style={{ marginTop: "0" }}>
+            {t("SeeMore")}
+          </Typography>
           <ArrowForwardIcon
             fontSize="small"
             style={{ marginLeft: "0.5em", fontSize: "1em" }}
@@ -155,6 +188,28 @@ const TimeLineRight = ({ title, subtitle, date, backdropContent, last }) => {
         </div>
       </div>
     </>
+  );
+};
+
+const BackDropContent = ({ title, desc }) => {
+  const { t } = useTranslation();
+  const classes = useStyle();
+
+  return (
+    <Box>
+      <Typography
+        className={`${classes.centeredText} ${classes.marginBottom} ${classes.secondaryColor} ${classes.textBold}`}
+        variant="h6"
+      >
+        {t(title)}
+      </Typography>
+      <Typography
+        variant="body1"
+        className={`${classes.centeredText} ${classes.marginBottom}`}
+      >
+        {t(desc)}
+      </Typography>
+    </Box>
   );
 };
 
@@ -199,19 +254,28 @@ const Qualification = () => {
             title={t("BacEs")}
             subtitle={t("HighSchool") + " Benjamin Franklin - France"}
             date={"2013 - 2016"}
-            backdropContent={"TEST"}
+            backdropContent={
+              <BackDropContent title="BacEs" desc="BacEsLongDesc" />
+            }
           ></TimeLineLeft>
           <TimeLineRight
             title={t("EpitechGrandEcole")}
             subtitle={"Epitech - France"}
             date={"2017 - 2019"}
-            backdropContent={"TEST"}
+            backdropContent={
+              <BackDropContent
+                title="EpitechGrandEcole"
+                desc="EpitechGrandEcoleLongDesc"
+              />
+            }
           ></TimeLineRight>
           <TimeLineLeft
             title={"Epitech MSC Pro"}
             subtitle={"Epitech - France"}
             date={"2020 - 2022"}
-            backdropContent={"TEST"}
+            backdropContent={
+              <BackDropContent title="MSCPro" desc="MSCProLongDesc" />
+            }
             last={true}
           ></TimeLineLeft>
         </Box>
@@ -220,14 +284,21 @@ const Qualification = () => {
           <TimeLineLeft
             title={t("SailInstructor")}
             subtitle={"ASN Quiberon - France"}
-            date={t("Summer") + " 2017 - 2021"}
-            backdropContent={"TEST"}
+            date={t("Summer") + " 2015 - 2021"}
+            backdropContent={
+              <BackDropContent
+                title="SailInstructor"
+                desc="SailInstructorLongDesc"
+              />
+            }
           ></TimeLineLeft>
           <TimeLineRight
             title={t("WorkStage1")}
             subtitle={"IDIESE - France"}
             date={"2018 - 6 " + t("Months")}
-            backdropContent={"TEST"}
+            backdropContent={
+              <BackDropContent title="WorkStage1" desc="WorkStage1LongDesc" />
+            }
           ></TimeLineRight>
           <TimeLineLeft
             title={
@@ -236,7 +307,15 @@ const Qualification = () => {
             }
             subtitle={"Code 42 - France"}
             date={t("Alternate") + " 2020 - 2022"}
-            backdropContent={"TEST"}
+            backdropContent={
+              <BackDropContent
+                title={
+                  t("FullStackDev").charAt(0).toUpperCase() +
+                  t("FullStackDev").slice(1)
+                }
+                desc="AlternateLongDesc"
+              />
+            }
             last={true}
           ></TimeLineLeft>
         </Box>

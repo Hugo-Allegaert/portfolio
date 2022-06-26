@@ -10,6 +10,10 @@ const useStyle = makeStyles((theme) => ({
     borderRadius: "20px",
     boxShadow: "rgba(0, 0, 0, 0.16) 0px 0px 4px;",
     padding: theme.spacing(2),
+    width: "40%",
+    [theme.breakpoints.down("sm")]: {
+      width: "60%",
+    },
   },
   boxtitles: {
     display: "flex",
@@ -39,6 +43,7 @@ const CollapsibleBackdrop = ({ open, setOpen, children }) => {
             onClick={() => {
               setOpen(false);
             }}
+            style={{ padding: "0" }}
           >
             <CloseIcon fontSize="small" />
           </IconButton>
