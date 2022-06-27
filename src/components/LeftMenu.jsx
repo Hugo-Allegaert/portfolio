@@ -1,9 +1,7 @@
 import React from "react";
-import { Box, makeStyles, Typography, useTheme } from "@material-ui/core";
-import { useTranslation } from "react-i18next";
+import { Box, makeStyles, useTheme } from "@material-ui/core";
 import { IconButton } from "@mui/material";
 import {
-  ArrowUpward,
   ColorLensRounded,
   MailOutlineOutlined,
   Person,
@@ -13,6 +11,7 @@ import { useState, useEffect } from "react";
 
 const useStyle = makeStyles((theme) => ({
   menuContainer: {
+    opacity: "0.85",
     display: "flex",
     flexDirection: "column",
     backgroundColor: theme.palette.secondary.main,

@@ -42,7 +42,7 @@
   "ReinforcementLearningDesc": "L'objectif était de résoudre le jeu Taxi-v3 de la bibliothèque Gym en utilisant différents algorithmes d'apprentissage par renforcement. Pour le résoudre, j'ai implémenté ma propre version du Q-Leaning, Deep Q-Leaning, Double Deep Q-Leaning et PPO.",
   "ReinforcementLearningTopic": "#ArtificialIntelligence",
   "TravelOrderResolver": "Résolveur d'ordre de voyage",
-  "TravelOrderResolverDesc": "L'objectif était de construire un programme qui traite les commandes vocales et textuelles pour trouver un itinéraire approprié. Plus précisément, le logiciel recevra les demandes de trajet sous forme d'e-mail ou d'enregistrement téléphonique, et affichera au moins un trajet adaptée aux attentes du client (à partir de la base de données SNCF).",
+  "TravelOrderResolverDesc": "L'objectif était de construire un programme qui traite les commandes vocales et textuelles pour trouver un itinéraire approprié. Plus précisément, le logiciel recevra les demandes de trajet sous forme d'e-mail ou d'enregistrement téléphonique, et affichera au moins un trajet adapté aux attentes du client (à partir de la base de données SNCF).",
   "TravelOrderResolverTopic": "#ArtificialIntelligence #WebDesign #DevOps",
   "IRC": "Chat de relais Internet",
   "IRCDesc": "L'objectif était de construire une application IRC, du serveur au client web. IRC est un système basé sur du texte pour la messagerie instantanée, conçu pour la communication de groupe dans des forums de discussion, appelés canaux, mais permet également une communication en tête-à-tête via des messages privés.",
