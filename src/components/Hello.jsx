@@ -77,7 +77,7 @@ const Hello = () => {
         <OutlinedButton
           theme={theme}
           variant="outlined"
-          href="/img/Hugo-Allegaert-CV..pdf"
+          href="/img/Hugo-Allegaert-CV.pdf"
           download="Hugo-Allegaert-CV.pdf"
         >
           {t("DownloadCV")}
