@@ -1,7 +1,7 @@
 {
   "Hello": "Bonjour",
   "Im": "Je suis",
-  "FullStackDev": "développeur Full Stack",
+  "FullStackDev": "Développeur Full Stack",
   "Specialized": "spécialisé dans l'intelligence artificielle",
   "DownloadCV": "Télécharger CV",
   "AboutMe": "À propos de moi",
@@ -18,11 +18,10 @@
   "Cpp": "C++",
   "Qualification": "Qualifications",
   "MyPersonalJourney": "Mon parcours personnel.",
-  "HighSchoolDetail": "Detail programme lycée.test aha",
   "Education": "Éducation",
   "Work": "Travail",
   "BacEs": "Baccalauréat économique et social",
-  "HighSchool": "Lycée",
+  "HighSchool": "Lycée Benjamin Franklin - France",
   "EpitechGrandEcole": "Epitech programme Grande École",
   "SailInstructor": "Moniteur de voile",
   "Summer": "Été",
@@ -52,5 +51,6 @@
   "EpictureTopic": "#Mobile #ExternalAPI #MobileDesign",
   "Contact": "Contactez-Moi",
   "GetInTouch": "Entrons en contact pour vos projets !",
-  "CallMe": "Appelez-moi"
+  "CallMe": "Appelez-moi",
+  "SGTechLeadLongDesc": "Pilotage technique d’une équipe Agile sur un projet stratégique de modernisation d’applications critiques (budgets & RH) vers une architecture cloud-ready et scalable: <br/> • Réduction des délais de traitement de ~72h à ~6h, soit une réduction de +90%, améliorant drastiquement la réactivité et la fiabilité pour les équipes financières <br/> • Optimisation cloud & CI/CD → –65% de coûts infra <br/> • Mise en place de 80% de couverture de test obligatoire <br/> • Monitoring avancé avec ELK → développeurs plus réactifs et suivi simplifié de l’activité utilisateur pour l’équipe produit <br /> Résultats : des applications modernisées, cloud-ready et fiables, tout en élevant durablement le niveau de compétence et la culture qualité de l’équipe."
 }

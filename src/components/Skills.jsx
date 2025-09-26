@@ -2,11 +2,8 @@ import React from "react";
 import { Box, makeStyles } from "@material-ui/core";
 import CollapsibleBox from "./CollapsibleBox";
 import { t } from "i18next";
-import StorageIcon from "@mui/icons-material/Storage";
-import CodeIcon from "@mui/icons-material/Code";
-import FormatColorTextIcon from "@mui/icons-material/FormatColorText";
-import SettingsIcon from "@mui/icons-material/Settings";
 import ProgressBar from "./ProgressBar";
+import { SKILLS } from "../conf/SKILLS";
 
 const useStyle = makeStyles((theme) => ({
   wrapper: {
@@ -26,114 +23,24 @@ const Skills = () => {
 
   return (
     <Box className={classes.wrapper}>
-      <CollapsibleBox
-        title={t("BackDev")}
-        subtitle={t("MoreThan")}
-        icon={<StorageIcon />}
-      >
-        <ProgressBar title={"PHP"} subtitle={t("Advanced")} percent={95} />
-        <ProgressBar
-          title={"Python"}
-          subtitle={t("Advanced")}
-          percent={95}
-          margin={true}
-        />
-        <ProgressBar
-          title={"NodeJS"}
-          subtitle={t("Advanced")}
-          percent={70}
-          margin={true}
-        />
-        <ProgressBar
-          title={t("Cpp")}
-          subtitle={t("Intermediate")}
-          percent={65}
-          margin={true}
-        />
-      </CollapsibleBox>
-      <CollapsibleBox
-        title={t("FrontDev")}
-        subtitle={t("MoreThan")}
-        icon={<CodeIcon />}
-      >
-        <ProgressBar
-          title={"React"}
-          subtitle={t("Intermediate")}
-          percent={70}
-        />
-        <ProgressBar
-          title={"VueJs"}
-          subtitle={t("Intermediate")}
-          percent={70}
-          margin={true}
-        />
-        <ProgressBar
-          title={"JavaScript"}
-          subtitle={t("Intermediate")}
-          percent={70}
-          margin={true}
-        />
-        <ProgressBar
-          title={"HTML/CSS"}
-          subtitle={t("Basic")}
-          percent={60}
-          margin={true}
-        />
-      </CollapsibleBox>
-      <CollapsibleBox
-        title={t("Designer")}
-        subtitle={t("MoreThan")}
-        icon={<FormatColorTextIcon />}
-      >
-        <ProgressBar
-          title={"Figma"}
-          subtitle={t("Intermediate")}
-          percent={70}
-        />
-        <ProgressBar
-          title={"Photoshop"}
-          subtitle={t("Basic")}
-          percent={50}
-          margin={true}
-        />
-        <ProgressBar
-          title={"Blender"}
-          subtitle={t("Beginner")}
-          percent={35}
-          margin={true}
-        />
-      </CollapsibleBox>
-      <CollapsibleBox
-        title={t("DevOps")}
-        subtitle={t("MoreThan")}
-        icon={<SettingsIcon />}
-      >
-        <ProgressBar title={"Docker"} subtitle={t("Advanced")} percent={85} />
-        <ProgressBar
-          title={"Git"}
-          subtitle={t("Advanced")}
-          percent={80}
-          margin={true}
-        />
-        <ProgressBar
-          title={"PostgreSQL"}
-          subtitle={t("Advanced")}
-          percent={80}
-          margin={true}
-        />
-        <ProgressBar
-          title={"MySql"}
-          subtitle={t("Advanced")}
-          percent={75}
-          margin={true}
-        />
-        <ProgressBar
-          title={"Ansible"}
-          subtitle={t("Basic")}
-          percent={65}
-          margin={true}
-        />
-      </CollapsibleBox>
+      {SKILLS.map((skillCategory, index) => (
+        <CollapsibleBox
+            key={index}
+            title={t(skillCategory.title)}
+            subtitle={t(skillCategory.subtitle)}
+            icon={skillCategory.icon}
+          >
+            {skillCategory.subskills.map((skill, skillIndex) => (
+              <ProgressBar
+                key={skillIndex}
+                title={t(skill.title)}
+                subtitle={t(skill.subtitle)}
+                percent={skill.progress}
+                margin={true}
+              />
+        ))}
+        </CollapsibleBox>
+      ))}
     </Box>
   );
 };

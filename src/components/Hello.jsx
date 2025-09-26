@@ -41,6 +41,7 @@ const useStyle = makeStyles((theme) => ({
   btncontainer: {
     display: "flex",
     justifyContent: "center",
+    textAlign: "center",
     marginTop: theme.spacing(10),
     [theme.breakpoints.down("sm")]: {
       marginTop: theme.spacing(5),

@@ -1,6 +1,5 @@
 import './services/multilingual'
 import './App.css';
-import Header from './components/Header';
 import { CustomThemeProvider } from "./context/theme-context";
 import Hello from './components/Hello';
 import Section from './components/Section';
@@ -11,14 +10,15 @@ import Swipe from './components/Swipe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import LeftMenu from './components/LeftMenu';
+import RightMenu from './components/RightMenu';
 
 function App() {
   const { t } = useTranslation();
 
   return (
     <CustomThemeProvider >
-      <Header />
       <LeftMenu />
+      <RightMenu />
       <Section id="hello">
         <Hello />
       </Section>

@@ -5,7 +5,8 @@ import SchoolIcon from "@mui/icons-material/School";
 import WorkIcon from "@mui/icons-material/Work";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import CollapsibleBackdrop from "./ClosableBackdrop";
-import { useTranslation } from "react-i18next";
+import { useTranslation, Trans } from "react-i18next";
+import { QUALIFICATION } from "../conf/QUALIFICATION";
 
 const useStyle = makeStyles((theme) => ({
   container: {
@@ -207,7 +208,7 @@ const BackDropContent = ({ title, desc }) => {
         variant="body1"
         className={`${classes.centeredText} ${classes.marginBottom}`}
       >
-        {t(desc)}
+        <Trans i18nKey={desc}></Trans>
       </Typography>
     </Box>
   );
@@ -215,7 +216,7 @@ const BackDropContent = ({ title, desc }) => {
 
 const Qualification = () => {
   const classes = useStyle();
-  const [education, setEducation] = useState(true);
+  const [education, setEducation] = useState(false);
   const { t } = useTranslation();
 
   const handleSwitch = (val) => {
@@ -248,78 +249,29 @@ const Qualification = () => {
           </Typography>
         </div>
       </Box>
-      {education === true ? (
-        <Box className={classes.timelineWrapper}>
+      <Box className={classes.timelineWrapper}>
+      {QUALIFICATION[education ? "education" : "work"].map((item, index) => (
+        index % 2 === 0 ? (
           <TimeLineLeft
-            title={t("BacEs")}
-            subtitle={t("HighSchool") + " Benjamin Franklin - France"}
-            date={"2013 - 2016"}
-            backdropContent={
-              <BackDropContent title="BacEs" desc="BacEsLongDesc" />
-            }
-          ></TimeLineLeft>
+            key={index}
+            title={t(item.title)}
+            subtitle={t(item.subtitle)}
+            date={item.date}
+            backdropContent={<BackDropContent title={item.title} desc={t(item.descriptionKey)} />}
+            last={index === QUALIFICATION[education ? "education" : "work"].length - 1}
+          />
+        ) : (
           <TimeLineRight
-            title={t("EpitechGrandEcole")}
-            subtitle={"Epitech - France"}
-            date={"2017 - 2019"}
-            backdropContent={
-              <BackDropContent
-                title="EpitechGrandEcole"
-                desc="EpitechGrandEcoleLongDesc"
-              />
-            }
-          ></TimeLineRight>
-          <TimeLineLeft
-            title={"Epitech MSC Pro"}
-            subtitle={"Epitech - France"}
-            date={"2020 - 2022"}
-            backdropContent={
-              <BackDropContent title="MSCPro" desc="MSCProLongDesc" />
-            }
-            last={true}
-          ></TimeLineLeft>
-        </Box>
-      ) : (
-        <Box className={classes.timelineWrapper}>
-          <TimeLineLeft
-            title={t("SailInstructor")}
-            subtitle={"ASN Quiberon - France"}
-            date={t("Summer") + " 2015 - 2021"}
-            backdropContent={
-              <BackDropContent
-                title="SailInstructor"
-                desc="SailInstructorLongDesc"
-              />
-            }
-          ></TimeLineLeft>
-          <TimeLineRight
-            title={t("WorkStage1")}
-            subtitle={"IDIESE - France"}
-            date={"2018 - 6 " + t("Months")}
-            backdropContent={
-              <BackDropContent title="WorkStage1" desc="WorkStage1LongDesc" />
-            }
-          ></TimeLineRight>
-          <TimeLineLeft
-            title={
-              t("FullStackDev").charAt(0).toUpperCase() +
-              t("FullStackDev").slice(1)
-            }
-            subtitle={"Code 42 - France"}
-            date={t("Alternate") + " 2020 - 2022"}
-            backdropContent={
-              <BackDropContent
-                title={
-                  t("FullStackDev").charAt(0).toUpperCase() +
-                  t("FullStackDev").slice(1)
-                }
-                desc="AlternateLongDesc"
-              />
-            }
-            last={true}
-          ></TimeLineLeft>
-        </Box>
-      )}
+            key={index}
+            title={t(item.title)}
+            subtitle={t(item.subtitle)}
+            date={item.date}
+            backdropContent={<BackDropContent title={item.title} desc={t(item.descriptionKey)}/>}
+            last={index === QUALIFICATION[education ? "education" : "work"].length - 1}
+          />
+        )
+      ))}
+      </Box>
     </div>
   );
 };

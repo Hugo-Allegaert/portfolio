@@ -1,15 +1,15 @@
 {
   "Hello": "Hello",
   "Im": "I'm",
-  "FullStackDev": "Full Stack developper",
+  "FullStackDev": "Full Stack developer",
   "Specialized": "specialized in artificial intelligence",
   "DownloadCV": "Download CV",
   "AboutMe": "About me",
   "Skills": "Skills",
   "MySkills": "My technical level",
-  "BackDev": "Backend developper",
+  "BackDev": "Backend developer",
   "MoreThan": "More than 5 years",
-  "FrontDev": "Frontend developper",
+  "FrontDev": "Frontend developer",
   "Designer": "Webdesigner",
   "Advanced": "Advanced",
   "Intermediate": "Intermediate",
@@ -21,7 +21,7 @@
   "Education": "Education",
   "Work": "Work",
   "BacEs": "Baccalaureate in economics and social science",
-  "HighSchool": "High school",
+  "HighSchool": "High school Benjamin Franklin - France",
   "EpitechGrandEcole": "Epitech Grande Ecole program",
   "SailInstructor": "Sailing instructor",
   "Summer": "Summer",
@@ -51,5 +51,6 @@
   "EpictureTopic": "#Mobile #ExternalAPI #MobileDesign",
   "Contact": "Contact Me",
   "GetInTouch": "Get in touch for your projects !",
-  "CallMe": "Call me"
+  "CallMe": "Call me",
+  "SGTechLeadLongDesc": "Technical management of an Agile team on a strategic project to modernize critical applications (budgets & HR) towards a cloud-ready and scalable architecture: <br/> • Reduction of processing times from ~72h to ~6h, a reduction of +90%, drastically improving responsiveness and reliability for the financial teams <br/> • Cloud & CI/CD optimization → –65% of infrastructure costs <br/> • Implementation of 80% mandatory test coverage <br/> • Advanced monitoring with ELK → more responsive developers and simplified tracking of user activity for the product team <br /> Results: modernized, cloud-ready and reliable applications, while sustainably raising the team's skill level and quality culture."
 }
